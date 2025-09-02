@@ -63,9 +63,13 @@ def select_question_type():
     """
     prompts the user to select type of questions (multiple/boolean).
     """
-    type = input("Select type of question (multiple/True or False) or press 'r' for random:")
+    type = input("Select type of question (multiple or true/False) or press 'r' for random:")
     if type.lower()=='r':
-        types=['multiple']
+        types=['multiple','true/false']
+        qtype=random.choice(types)
+    else:
+        qtype=type.lower()
+    return qtype
 # ------------------ quiz logicc ------------------
 
 def ask_question():
